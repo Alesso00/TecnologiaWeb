@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+
+    <script>
+        function validarContraseñas() {
+            var pwd = document.getElementById("pwd").value;
+            var pwdC = document.getElementById("pwdC").value;
+
+            if (pwd !== pwdC) {
+                alert("Las contraseñas no coinciden. Por favor, ingrese las contraseñas nuevamente.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+    
+</head>
+<body>
+    <div class="card" style="width: 20rem;">
+    <form action = "confirmacion_registro.php" method="POST"> <!--Lo pase a archivo .php porque use php para imprimir y recibir datos-->
+
+<label for="nombre">Ingrese su nombre completo:</label><br>
+<input type="text" name="nombre" required placeholder="Ingrese su nombre completo"><br>
+<br>
+<label for="correo">Ingrese su correo electronico:</label><br>
+<input type="text" name="correo" required placeholder="Ingrese su correo electronico"><br>
+<br>
+<label for="pwd">Ingrese una contraseña:</label>
+<input type="password" id="pwd" name="pwd" required placeholder="Ingrese una contraseña" minlength="6" maxlength="20">
+<br><br>
+<label for="pwdC">Confirme su contraseña:</label>
+<input type="password" id="pwdC" name="pwdC" required placeholder="Confirme su contraseña" minlength="6" maxlength="20">
+<br><br>
+<label for="genero">Género:</label><br>
+<input type="radio" id="masculino" name="genero" value="masculino">
+<label for="masculino">Masculino</label>
+<br><br>
+<input type="radio" id="femenino" name="genero" value="femenino">
+<label for="femenino">Femenino</label>
+<br><br>
+<input type="radio" id="otro" name="genero" value="otro">
+<label for="otro">Transformer</label>
+
+<br><br>
+
+<label for="pais">País de Residencia:</label>
+<select id="pais" name="pais">
+    <option value="seleccionar">Seleccione un país...</option>
+    <option value="el salvador">El Salvador</option>
+    <option value="brasil">Brasil</option>
+    <option value="chile">Chile</option>
+    <option value="colombia">Colombia</option>
+    <option value="mexico">México</option>
+    <option value="otros">Otros</option>
+</select>
+<br><br>
+<label for="aceptar">Acepto los términos y condiciones:</label>
+<input type="checkbox" id="aceptar" name="aceptar" required>
+<br>
+<input type="submit" value="Registrarse">
+    </form>
+    <p class="card-text"></p>
+</body>
+</html>
